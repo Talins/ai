@@ -16,10 +16,10 @@ jobs:
       - name: Pull, Tag and Push
         run: |
           # 1. 从 Docker Hub 拉取目标镜像
-          docker pull justlikemaki/openclaw-docker-cn-im:latest
+          docker pull 1186258278/openclaw-zh:latest
           
           # 2. 重新打标签，指向你的阿里云仓库（请把 talins-ai 替换为你的命名空间，openclaw 替换为仓库名）
-          docker tag justlikemaki/openclaw-docker-cn-im:latest registry.cn-guangzhou.aliyuncs.com/talins/openclaw:latest
+          docker tag 1186258278/openclaw-zh:latest registry.cn-guangzhou.aliyuncs.com/talins/openclaw:latest
           
           # 3. 推送到阿里云
           docker push registry.cn-guangzhou.aliyuncs.com/talins/openclaw:latest
