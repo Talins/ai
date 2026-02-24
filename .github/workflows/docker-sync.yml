@@ -1,0 +1,25 @@
+name: Sync OpenClaw Image to Aliyun
+
+on:
+  workflow_dispatch: # 允许手动点击运行
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Login to Aliyun ACR
+        run: docker login -u ${{ secrets.ALIYUN_USERNAME }} -p ${{ secrets.ALIYUN_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
+
+      - name: Pull, Tag and Push
+        run: |
+          # 1. 从 Docker Hub 拉取目标镜像
+          docker pull justlikemaki/openclaw-docker-cn-im:latest
+          
+          # 2. 重新打标签，指向你的阿里云仓库（请把 talins-ai 替换为你的命名空间，openclaw 替换为仓库名）
+          docker tag justlikemaki/openclaw-docker-cn-im:latest registry.cn-hangzhou.aliyuncs.com/talins-ai/openclaw:latest
+          
+          # 3. 推送到阿里云
+          docker push registry.cn-hangzhou.aliyuncs.com/talins-ai/openclaw:latest
