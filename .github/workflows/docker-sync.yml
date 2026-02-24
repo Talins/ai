@@ -19,7 +19,7 @@ jobs:
           docker pull justlikemaki/openclaw-docker-cn-im:latest
           
           # 2. 重新打标签，指向你的阿里云仓库（请把 talins-ai 替换为你的命名空间，openclaw 替换为仓库名）
-          docker tag justlikemaki/openclaw-docker-cn-im:latest registry.cn-guangzhou.aliyuncs.com/Talins/ai/openclaw:latest
+          docker tag justlikemaki/openclaw-docker-cn-im:latest registry.cn-guangzhou.aliyuncs.com/talins-ai/openclaw:latest
           
           # 3. 推送到阿里云
-          docker push registry.cn-guangzhou.aliyuncs.com/Talins/ai/openclaw:latest
+          docker push registry.cn-guangzhou.aliyuncs.com/talins-ai/openclaw:latest
