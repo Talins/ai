@@ -16,10 +16,10 @@ jobs:
       - name: Pull, Tag and Push
         run: |
           # 1. 从 Docker Hub 拉取目标镜像
-          docker pull justlikemaki/aiclient-2-api
+          docker pull mzz2017/v2raya
           
           # 2. 重新打标签，指向你的阿里云仓库（请把 talins-ai 替换为你的命名空间，openclaw 替换为仓库名）
-          docker tag justlikemaki/aiclient-2-api registry.cn-guangzhou.aliyuncs.com/talins/aiclient-2-api:latest
+          docker tag mzz2017/v2raya registry.cn-guangzhou.aliyuncs.com/talins/v2raya:latest
           
           # 3. 推送到阿里云
-          docker push registry.cn-guangzhou.aliyuncs.com/talins/aiclient-2-api:latest
+          docker push registry.cn-guangzhou.aliyuncs.com/talins/v2raya:latest
