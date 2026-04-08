@@ -16,10 +16,10 @@ jobs:
       - name: Pull, Tag and Push
         run: |
           # 1. 从 Docker Hub 拉取目标镜像
-          docker pull mzz2017/v2raya
+          docker pull budibase/budibase
           
           # 2. 重新打标签，指向你的阿里云仓库（请把 talins-ai 替换为你的命名空间，openclaw 替换为仓库名）
-          docker tag mzz2017/v2raya registry.cn-guangzhou.aliyuncs.com/talins/v2raya:latest
+          docker tag budibase/budibase registry.cn-guangzhou.aliyuncs.com/talins/budibase:latest
           
           # 3. 推送到阿里云
-          docker push registry.cn-guangzhou.aliyuncs.com/talins/v2raya:latest
+          docker push registry.cn-guangzhou.aliyuncs.com/talins/budibase:latest
